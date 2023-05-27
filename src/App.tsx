@@ -12,9 +12,10 @@ export default function App() {
   const [header, setHeader] = useState("");
 
   useEffect(() => {
-    const curHeader = titleMap.find((item) =>
-      curLoc.pathname.includes(item.path)
-    );
+    const curHeader =
+      curLoc.pathname === "/"
+        ? titleMap[2]
+        : titleMap.find((item) => curLoc.pathname.includes(item.path));
     if (curHeader && curHeader.title) {
       setHeader(curHeader.title);
     }
