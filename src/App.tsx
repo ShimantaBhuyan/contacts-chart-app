@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 const titleMap = [
-  { path: "/chart-map", title: "Charts and Maps" },
-  { path: "/contacts", title: "Contact" },
-  { path: "/", title: "Contact" },
+  { path: "/chart-map", title: "Charts and Maps Page" },
+  { path: "/contacts", title: "Contact Page" },
+  { path: "/", title: "Contact & Chart-Maps App" },
 ];
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
       <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg">
         <div className="px-3 py-3 lg:px-5">
           <div className="flex justify-center items-center">
-            <h1 className="text-2xl font-bold">{header} Page</h1>
+            <h1 className="text-2xl font-bold">{header}</h1>
           </div>
         </div>
       </nav>
@@ -38,8 +38,8 @@ export default function App() {
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
           <ul className="space-y-2 font-medium">
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contacts"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-200"
               >
                 <svg
@@ -53,11 +53,11 @@ export default function App() {
                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                 </svg>
                 <span className="ml-3">Contact</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/charts-maps"
+              <Link
+                to="/charts-maps"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-200"
               >
                 <svg
@@ -72,7 +72,7 @@ export default function App() {
                 <span className="flex-1 ml-3 whitespace-nowrap">
                   Charts and Maps
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -80,7 +80,7 @@ export default function App() {
 
       <div
         id="detail"
-        className="p-4 sm:ml-64 mt-14 flex flex-col justify-center items-center"
+        className="p-4 sm:ml-64 mt-14 pt-10 flex flex-col justify-center items-center"
       >
         <Outlet />
       </div>
