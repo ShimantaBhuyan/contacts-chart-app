@@ -20,15 +20,18 @@ const ContactDetails: React.FC = () => {
   const config = genConfig(selectedContact?.id.toString());
 
   return (
-    <div className="flex flex-col justify-center items-center gap-5 border border-gray-600 rounded-md px-10 py-4 w-[250px]">
-      <Avatar className="w-32 h-32" {...config} />
-      <h2 className="text-lg text-center">
-        {selectedContact?.firstName} {selectedContact?.lastName}
-      </h2>
-      <h2 className="text-lg">
-        Status: {selectedContact?.status.toUpperCase()}
-      </h2>
-    </div>
+    <>
+      <h2 className="text-2xl font-medium mb-10">Contact Details Screen</h2>
+      <div className="flex flex-col justify-center items-center gap-5 border border-gray-600 rounded-md px-10 py-4 w-[250px]">
+        <Avatar className="w-32 h-32" {...config} />
+        <h2 className="text-lg text-center">
+          {selectedContact?.firstName} {selectedContact?.lastName}
+        </h2>
+        <h2 className="text-lg">
+          Status: {selectedContact?.status.toUpperCase()}
+        </h2>
+      </div>
+    </>
   );
 };
 

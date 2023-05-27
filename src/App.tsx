@@ -23,10 +23,10 @@ export default function App() {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg">
+      <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg bg-[teal]">
         <div className="px-3 py-3 lg:px-5">
           <div className="flex justify-center items-center">
-            <h1 className="text-2xl font-bold">{header}</h1>
+            <h1 className="text-2xl font-bold text-gray-50">{header}</h1>
           </div>
         </div>
       </nav>
