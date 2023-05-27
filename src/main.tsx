@@ -12,6 +12,7 @@ import Contacts from "./routes/contact";
 import CreateContact from "./routes/create-contact";
 import ContactDetails from "./routes/contact-details";
 import EditContact from "./routes/edit-contact";
+import ChartsMaps from "./routes/charts-maps";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "contacts/create",
         element: <CreateContact />,
+      },
+      {
+        path: "charts-maps/",
+        element: <ChartsMaps />,
       },
     ],
   },

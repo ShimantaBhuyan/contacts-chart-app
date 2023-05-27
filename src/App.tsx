@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
 const titleMap = [
-  { path: "/chart-map", title: "Charts and Maps Page" },
+  { path: "/charts-maps", title: "Charts and Maps Page" },
   { path: "/contacts", title: "Contact Page" },
   { path: "/", title: "Contact & Chart-Maps App" },
 ];
@@ -15,7 +15,7 @@ export default function App() {
     const curHeader =
       curLoc.pathname === "/"
         ? titleMap[2]
-        : titleMap.find((item) => curLoc.pathname.includes(item.path));
+        : titleMap.find((item) => curLoc.pathname.startsWith(item.path));
     if (curHeader && curHeader.title) {
       setHeader(curHeader.title);
     }
@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg bg-[teal]">
+      <nav className="fixed top-0 z-50 w-full border-b border-gray-200 shadow-lg bg-[teal]">
         <div className="px-3 py-3 lg:px-5">
           <div className="flex justify-center items-center">
             <h1 className="text-2xl font-bold text-gray-50">{header}</h1>
