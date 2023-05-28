@@ -7,6 +7,7 @@ import {
   RootState,
 } from "./contact-slice";
 import { useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const EditContact: React.FC = () => {
   const curLoc = useLocation();
@@ -53,6 +54,8 @@ const EditContact: React.FC = () => {
     dispatch(
       editContact({ id: selectedContact?.id, firstName, lastName, status })
     );
+
+    toast.success("Contact edited successfully!");
     setFirstName("");
     setLastName("");
     setStatus("active");

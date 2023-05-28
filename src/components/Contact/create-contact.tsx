@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "./contact-slice"; // Assuming the store file is in the same directory
+import { addContact } from "./contact-slice";
+import { toast } from "react-hot-toast";
 
 const CreateContact: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const CreateContact: React.FC = () => {
     event.preventDefault();
 
     dispatch(addContact({ firstName, lastName, status }));
+    toast.success("Contact created successfully!");
     setFirstName("");
     setLastName("");
     setStatus("active");
@@ -45,7 +47,7 @@ const CreateContact: React.FC = () => {
             id="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
-            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="flex flex-col justify-center">
@@ -55,7 +57,7 @@ const CreateContact: React.FC = () => {
             id="lastName"
             value={lastName}
             onChange={handleLastNameChange}
-            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -70,7 +72,7 @@ const CreateContact: React.FC = () => {
               value={"active"}
               checked={status === "active"}
               name="active-radio"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
               onChange={handleStatusChange}
             />
             <label
@@ -87,7 +89,7 @@ const CreateContact: React.FC = () => {
               value={"inactive"}
               checked={status === "inactive"}
               name="inactive-radio"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
               onChange={handleStatusChange}
             />
             <label

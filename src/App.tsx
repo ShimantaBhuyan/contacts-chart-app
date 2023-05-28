@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const titleMap = [
   { path: "/charts-maps", title: "Charts and Maps Page" },
@@ -83,8 +84,30 @@ export default function App() {
         id="detail"
         className="p-4 sm:ml-64 mt-14 pt-10 flex flex-col justify-center items-center"
       >
-        <Outlet />
+        {curLoc.pathname === "/" ? (
+          <h1 className="text-3xl">Go to page from the sidebar</h1>
+        ) : (
+          <Outlet />
+        )}
       </div>
+
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              background: "green",
+              color: "white",
+            },
+          },
+          error: {
+            style: {
+              background: "red",
+              color: "white",
+            },
+          },
+          position: "bottom-center",
+        }}
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteContact, RootState } from "./contact-slice";
 import ContactCard from "./contact-card";
+import toast from "react-hot-toast";
 
 const Contacts: React.FC = () => {
   const contacts = useSelector((state: RootState) => state.contacts);
@@ -10,6 +11,8 @@ const Contacts: React.FC = () => {
 
   const handleDelete = (contactId: number) => {
     dispatch(deleteContact(contactId));
+
+    toast.error("Contact deleted!");
   };
 
   return (
@@ -20,7 +23,7 @@ const Contacts: React.FC = () => {
       >
         Create Contact
       </Link>
-      <div className="flex flex-wrap gap-10">
+      <div className="flex flex-wrap justify-center gap-10">
         {contacts && contacts.length > 0 ? (
           contacts.map((contact) => (
             <ContactCard
@@ -41,6 +44,7 @@ const Contacts: React.FC = () => {
           </div>
         )}
       </div>
+      <div className="h-20"></div>
     </div>
   );
 };
