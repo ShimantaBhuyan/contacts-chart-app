@@ -12,6 +12,8 @@ export default function ErrorPage() {
       <h1 className="text-4xl">Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
         <i>{error.statusText || error.message}</i>
       </p>
     </div>

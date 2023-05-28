@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addContact,
-  editContact,
-  getContactById,
-  RootState,
-} from "./contact-slice";
+import { editContact, getContactById, RootState } from "./contact-slice";
 import { useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 
