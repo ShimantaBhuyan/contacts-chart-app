@@ -95,7 +95,7 @@ const HistoricalDataChart = () => {
   );
 
   return (
-    <div className="w-full flex flex-col justify-center gap-10 p-4">
+    <div className="w-full flex flex-col justify-center gap-10 p-4 w-full">
       <h2 className="text-2xl font-bold mb-4">Historical COVID-19 Data</h2>
 
       <h2 className="text-xl font-bold mb-4">Cases</h2>

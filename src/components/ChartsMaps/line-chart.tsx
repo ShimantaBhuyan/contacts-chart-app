@@ -75,7 +75,7 @@ const LineChartComponent = ({
         left: 20,
         bottom: 5,
       }}
-      className="w-[100%] self-center"
+      className="w-[100%] self-center scale-50 sm:scale-100"
     >
       <CartesianGrid strokeDasharray="2 5" />
       <XAxis

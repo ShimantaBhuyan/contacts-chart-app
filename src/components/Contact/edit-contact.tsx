@@ -61,7 +61,7 @@ const EditContact: React.FC = () => {
       <h2 className="text-2xl font-medium mb-10">Edit Contact Screen</h2>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-5 justify-center w-[50%]"
+        className="flex flex-col gap-5 justify-center w-full sm:w-[50%]"
       >
         <div className="flex flex-col justify-center">
           <label htmlFor="firstName">First Name:</label>
@@ -70,7 +70,7 @@ const EditContact: React.FC = () => {
             id="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
-            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="flex flex-col justify-center">
@@ -80,7 +80,7 @@ const EditContact: React.FC = () => {
             id="lastName"
             value={lastName}
             onChange={handleLastNameChange}
-            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="flex flex-col gap-2">

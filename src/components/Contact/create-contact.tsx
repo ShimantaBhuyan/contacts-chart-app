@@ -38,7 +38,7 @@ const CreateContact: React.FC = () => {
       <h2 className="text-2xl font-medium mb-10">Create Contact Screen</h2>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-5 justify-center w-[50%]"
+        className="flex flex-col gap-5 justify-center w-full sm:w-[50%]"
       >
         <div className="flex flex-col justify-center">
           <label htmlFor="firstName">First Name:</label>
