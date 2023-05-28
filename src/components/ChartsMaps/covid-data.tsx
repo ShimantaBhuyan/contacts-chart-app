@@ -53,7 +53,7 @@ const CovidData = () => {
   console.log({ barChartData });
 
   return (
-    <div className="flex flex-col justify-center p-4 gap-10">
+    <div className="flex flex-col justify-center p-4 gap-10 w-full">
       <h2 className="text-2xl font-bold mb-4">
         Worldwide COVID-19 Data{" "}
         <span className="text-sm font-medium">
@@ -61,63 +61,130 @@ const CovidData = () => {
           {")"}
         </span>
       </h2>
-      <div className="flex flex-wrap gap-4 w-full">
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Total Population:{" "}
-          <span className="text-[#79d17d] font-medium">{data?.population}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Affected Countries:{" "}
-          <span className="text-[#4b4d0c] font-medium">
-            {data?.affectedCountries}
-          </span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Total cases:{" "}
-          <span className="text-[#9673b9] font-medium">{data?.cases}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Today's cases:{" "}
-          <span className="text-[#d6a742] font-medium">{data?.todayCases}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Total deaths:{" "}
-          <span className="text-[#ff0037] font-medium">{data?.deaths}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Today's deaths:{" "}
-          <span className="text-[#d45d85] font-medium">
-            {data?.todayDeaths}
-          </span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Total recovered:{" "}
-          <span className="text-[#2ad175] font-medium">{data?.recovered}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Today's recovered:{" "}
-          <span className="text-[#79d17d] font-medium">
-            {data?.todayRecovered}
-          </span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Active:{" "}
-          <span className="text-[#cab91c] font-medium">{data?.active}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Critical:{" "}
-          <span className="text-[#70450c] font-medium">{data?.critical}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Total Tested:{" "}
-          <span className="text-[#a2cc2d] font-medium">{data?.tests}</span>
-        </p>
-        <p className="text-sm border border-dashed border-gray-600 p-4 rounded-md">
-          Tests/million:{" "}
-          <span className="text-[#4669c7] font-medium">
-            {data?.testsPerOneMillion}
-          </span>
-        </p>
+
+      <div className="relative overflow-x-auto">
+        <table className="w-full text-sm text-left text-gray-600">
+          <thead className="text-xs uppercase bg-gray-50 bg-gray-700 text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Statistic
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Total Population
+              </th>
+              <td className="px-6 py-4">{data?.population}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Affected Countries
+              </th>
+              <td className="px-6 py-4">{data?.affectedCountries}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Total Cases
+              </th>
+              <td className="px-6 py-4">{data?.cases}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Todays Cases
+              </th>
+              <td className="px-6 py-4">{data?.todayCases}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Total Deaths
+              </th>
+              <td className="px-6 py-4">{data?.deaths}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Todays Deaths
+              </th>
+              <td className="px-6 py-4">{data?.todayDeaths}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Total Recovered
+              </th>
+              <td className="px-6 py-4">{data?.recovered}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Today Recovered
+              </th>
+              <td className="px-6 py-4">{data?.todayRecovered}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Active
+              </th>
+              <td className="px-6 py-4">{data?.active}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Critical
+              </th>
+              <td className="px-6 py-4">{data?.critical}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Total tested
+              </th>
+              <td className="px-6 py-4">{data?.tests}</td>
+            </tr>
+            <tr className="bg-white border-b border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+              >
+                Tests/million
+              </th>
+              <td className="px-6 py-4">{data?.testsPerOneMillion}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       {barChartData != undefined ? (
         <BarChart
@@ -130,7 +197,7 @@ const CovidData = () => {
             left: 20,
             bottom: 5,
           }}
-          className="self-center"
+          className="self-center scale-50 sm:scale-100"
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
