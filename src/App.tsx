@@ -27,7 +27,7 @@ export default function App() {
     <>
       <nav className="fixed top-0 z-50 w-full h-fit border-b border-gray-200 shadow-lg bg-[teal]">
         <div className="flex justify-center items-center px-3 py-3 lg:px-5">
-          <h1 className="text-2xl font-bold text-gray-50 self-center">
+          <h1 className="text-xl font-bold text-gray-50 self-center">
             {header}
           </h1>
           <button
