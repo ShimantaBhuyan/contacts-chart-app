@@ -11,6 +11,7 @@ const titleMap = [
 export default function App() {
   const curLoc = useLocation();
   const [header, setHeader] = useState("");
+  const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     const curHeader =
@@ -24,17 +25,36 @@ export default function App() {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full border-b border-gray-200 shadow-lg bg-[teal] z-10">
-        <div className="px-3 py-3 lg:px-5">
-          <div className="flex justify-center items-center">
-            <h1 className="text-2xl font-bold text-gray-50">{header}</h1>
-          </div>
+      <nav className="fixed top-0 z-50 w-full h-fit border-b border-gray-200 shadow-lg bg-[teal]">
+        <div className="flex justify-center items-center px-3 py-3 lg:px-5">
+          <h1 className="text-2xl font-bold text-gray-50 self-center">
+            {header}
+          </h1>
+          <button
+            onClick={() => {
+              setShowSidebar(!showSidebar);
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              aria-hidden="true"
+              className="flex-shrink-0 w-6 h-6 text-gray-50 transition duration-75 group-hover:text-gray-200 fixed top-4 left-6 sm:hidden"
+              viewBox="0 0 256 256"
+            >
+              <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+            </svg>
+          </button>
         </div>
       </nav>
 
       <aside
         id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-400 sm:translate-x-0 shadow-2xl"
+        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-400 ${
+          showSidebar && "translate-x-0"
+        } sm:translate-x-0 shadow-2xl`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
@@ -46,13 +66,14 @@ export default function App() {
               >
                 <svg
                   aria-hidden="true"
-                  className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-200"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                  className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-200"
                 >
-                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"></path>
                 </svg>
                 <span className="ml-3">Contact</span>
               </Link>
@@ -65,11 +86,13 @@ export default function App() {
                 <svg
                   aria-hidden="true"
                   className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-200"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
                 >
-                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                  <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"></path>
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">
                   Charts and Maps
