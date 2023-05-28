@@ -1,6 +1,4 @@
-# Project Title
-
-Contact Management + Charts & Maps
+# Contact Management + Charts & Maps
 
 ## Installation & Development
 
