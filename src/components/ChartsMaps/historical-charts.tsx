@@ -98,7 +98,7 @@ const HistoricalDataChart = () => {
     <div className="w-full flex flex-col justify-center gap-10 p-4">
       <h2 className="text-2xl font-bold mb-4">Historical COVID-19 Data</h2>
 
-      <h2 className="text-2xl font-bold mb-4">Cases</h2>
+      <h2 className="text-xl font-bold mb-4">Cases</h2>
       <LineChartComponent
         key={"historicalCasesTimeSeriesChart"}
         data={casesLineGraphData}
@@ -108,7 +108,7 @@ const HistoricalDataChart = () => {
         yKey="cases"
       />
 
-      <h2 className="text-2xl font-bold mb-4">Deaths</h2>
+      <h2 className="text-xl font-bold mb-4">Deaths</h2>
       <LineChartComponent
         key={"historicalDeathsTimeSeriesChart"}
         data={deathsLineGraphData}
@@ -118,7 +118,7 @@ const HistoricalDataChart = () => {
         yKey="deaths"
       />
 
-      <h2 className="text-2xl font-bold mb-4">Recovered</h2>
+      <h2 className="text-xl font-bold mb-4">Recovered</h2>
       <LineChartComponent
         key={"historicalRecoveredTimeSeriesChart"}
         data={recoveredLineGraphData}
